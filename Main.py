@@ -1,5 +1,5 @@
 ########################################
-# Group: Daniel Sauer, 
+# Group 1: Daniel Sauer, 
 # Date: 2/19/24
 # Assignment: Pi activity 4, Simon Says
 ########################################
@@ -35,10 +35,19 @@ class Button:
         GPIO.output(self.led, False)
 
     def is_pressed(self):
-        pass
+        result = GPIO.input(self.switch)
+        if result == True:
+            return True
+        else:
+            return False
 
-    def respond(self):      #Note: what it does when button/switch is pressed
-        pass
+    def respond(self):                              #Note: what it does when button/switch is pressed
+        self.turn_light_on()
+        self.sound.play()
+        sleep(1)
+        self.turn_light_off()
+        sleep(0.25)
+
     
     def __str__(self):
         return self.color
@@ -46,50 +55,3 @@ class Button:
 
 class Simon:
     pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-####################################################################################
-# set the GPIO pin numbers
-# the LEDs (from L to R). Red, Blue, Yellow, Green
-leds = [6, 13, 19, 21 ]
-
-# the sounds that map to each LED (from L to R)
-
-sounds = [ 
-pygame.mixer.Sound("one.wav"),
-pygame.mixer.Sound("two.wav"),
-pygame.mixer.Sound("three.wav"),
-pygame.mixer.Sound("four.wav") 
-]
-
-# use the Broadcom pin mode
-GPIO.setmode(GPIO.BCM)
-
-# setup the output pins
-GPIO.setup(leds, GPIO.OUT)
-print("Watch the LEDs light with sound!")
-for i in range(len(leds)):
-    # light the current LED
-    GPIO.output(leds[i], True)
-
-    # play its corresponding sound
-    sounds[i].play()
-
-    # wait a bit, then turn the LED off
-    sleep(1)
-    GPIO.output(leds[i], False)
-    sleep(0.5)
-    
-    print("Sionara!")
-    GPIO.cleanup()
