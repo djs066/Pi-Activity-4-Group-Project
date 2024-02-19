@@ -1,0 +1,18 @@
+Simon says, but on the potato
+
+Notes taken in class:
+preferably use relative paths ("sounds/one.wav")
+Professor higly reccomends using OS module, for os.path.join(" "), since it works across different types of OS
+Main = module file, dev = professor's version. Should make branch names clearer when possible
+
+To do:
+
+Make sure LEDs work
+Make sure sounds work
+Add switches (and handle input)
+
+Homework:
+
+add scoring mechanism
+increase speed over time
+stop using leds in sequence after certain point
