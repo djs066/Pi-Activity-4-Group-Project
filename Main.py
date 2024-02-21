@@ -1,8 +1,8 @@
-########################################
-# Group 1: Daniel Sauer, 
+####################################################
+# Group 1: Daniel Sauer, William Ford, Isaac Ingalls
 # Date: 2/19/24
 # Assignment: Pi activity 4, Simon Says
-########################################
+####################################################
 
 import pineworkslabs.RPi as GPIO
 from time import sleep
@@ -136,6 +136,7 @@ class Simon:
                 self.add_to_sequence()
                 self.playback()
                 self.debug_out(*self.sequence)
-                
+
         except KeyboardInterrupt:
-            pass
+            GPIO.cleanup()
+        
