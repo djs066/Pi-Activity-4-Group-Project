@@ -54,4 +54,34 @@ class Button:
 
 
 class Simon:
-    pass
+    WELCOME_MESSAGE = ""
+
+    BUTTONS = [
+
+    ]
+
+    def __init__(self, debug=True):
+        self.debug = debug
+        self.sequence: list[Button] = []    #Python 3.10+ only?
+
+    def debug_out(self, *args):
+        if self.debug:
+            print(*args)
+
+    def blink_all_buttons(self):
+        pass
+
+    def add_to_sequence(self):
+        pass
+
+    def lose(self):
+        pass
+
+    def playback(self):
+        pass
+
+    def check_input(self, pressed_button, correct_button):
+        pass
+
+    def run(self):
+        pass
