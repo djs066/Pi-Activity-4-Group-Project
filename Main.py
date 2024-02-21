@@ -18,10 +18,10 @@ GPIO.setmode(GPIO.LE_POTATO_LOOKUP)
 
 class Button:
 
-    def __init__(self, switch:int, led:int, sounds:str, color:str):
+    def __init__(self, switch:int, led:int, sound:str, color:str):
         self.switch = switch
         self.led = led
-        self.sound: Sound = Sound(sounds)
+        self.sound: Sound = Sound(sound)
         self.color = color
         self.setupGPIO()
 
@@ -65,10 +65,10 @@ class Simon:
     #Switch = input from respective switch
 
     BUTTONS = [
-        Button(switch=20, led=6, sound=os.path.join("sounds", "one.wav"), color="red"),          #Note: anytime file systems are dealt with (folders), import OS
-        Button(switch=16, led=13, sound=os.path.join("sounds", "two.wav"), color="blue"),
-        Button(switch=12, led=19, sound=os.path.join("sounds", "three.wav"), color="yellow"),
-        Button(switch=26, led=21, sound=os.path.join("sounds", "four.wav"), color="green"),
+        Button(switch=20, led=6, sound=os.path.join("Sounds", "one.wav"), color="red"),          #Note: anytime file systems are dealt with (folders), import OS
+        Button(switch=16, led=13, sound=os.path.join("Sounds", "two.wav"), color="blue"),
+        Button(switch=12, led=19, sound=os.path.join("Sounds", "three.wav"), color="yellow"),
+        Button(switch=26, led=21, sound=os.path.join("Sounds", "four.wav"), color="green"),
     ]   
 
     def __init__(self, debug=True):
