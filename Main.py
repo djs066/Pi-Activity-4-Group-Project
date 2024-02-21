@@ -18,10 +18,10 @@ GPIO.setmode(GPIO.LE_POTATO_LOOKUP)
 
 class Button:
 
-    def __init__(self, switch:int, led:int, sound:str, color:str):
+    def __init__(self, switch:int, led:int, sounds:str, color:str):
         self.switch = switch
         self.led = led
-        self.sound: Sound = Sound(sound)
+        self.sound: Sound = Sound(sounds)
         self.color = color
         self.setupGPIO()
 
@@ -55,7 +55,7 @@ class Button:
 
 
 class Simon:
-    WELCOME_MESSAGE = ""
+    WELCOME_MESSAGE = "Welcome to Simon! Press ctrl+c to quit at any time."
 
     #Do not use C:\\directory\\directory2
     #Do not use root directory of the VS code project
