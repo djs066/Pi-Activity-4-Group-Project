@@ -2,7 +2,13 @@
 # Group 1: Daniel Sauer, William Ford, Isaac Ingalls
 # Date: 2/19/24
 # Assignment: Pi activity 4, Simon Says
+#
+# Improvements made:
+#   - Scoring system: text
+#   - Increased speed: text
+#   - Leds off: text
 ####################################################
+
 
 import pineworkslabs.RPi as GPIO
 from time import sleep
