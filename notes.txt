@@ -16,3 +16,11 @@ Homework:
 add scoring mechanism
 increase speed over time
 stop using leds in sequence after certain point
+
+Current errors:
+
+#1 Program prints "red" then hangs up.
+Reason: red is the first item in the BUTTONS list. 
+        Replacing Simon.BUTTONS with self.sequence causes it to print the first x3
+        then cause error. Suspect its related to the while True loop but not sure exactly what.
+        Possibly the for loop getting nullified, causing it to be inifinte passes.
