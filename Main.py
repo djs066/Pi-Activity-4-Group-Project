@@ -1,15 +1,8 @@
-####################################################
-# Group 1: Daniel Sauer, William Ford, Isaac Ingalls
+########################################
+# Group 1: Daniel Sauer, 
 # Date: 2/19/24
 # Assignment: Pi activity 4, Simon Says
-#
-# Improvements made:
-#   - Scoring system: text
-#   - Increased speed: text
-#   - Leds off: text
-####################################################
-
-#why is it always red?
+########################################
 
 import pineworkslabs.RPi as GPIO
 from time import sleep
@@ -28,7 +21,7 @@ class Button:
     def __init__(self, switch:int, led:int, sound:str, color:str):
         self.switch = switch
         self.led = led
-        self.sound: Sound = Sound(sound)                            #Note: pretty sure intention is too loop through (sound). calls on list maybe?
+        self.sound: Sound = Sound(sound)
         self.color = color
         self.setupGPIO()
 
@@ -62,7 +55,7 @@ class Button:
 
 
 class Simon:
-    WELCOME_MESSAGE = "Welcome to Simon! Press ctrl+c to quit at any time."
+    WELCOME_MESSAGE = ""
 
     #Do not use C:\\directory\\directory2
     #Do not use root directory of the VS code project
@@ -143,14 +136,6 @@ class Simon:
                 self.add_to_sequence()
                 self.playback()
                 self.debug_out(*self.sequence)
-                for button in self.sequence:
-                    pressed_button = self.wait_for_press()
-                    self.check_input(pressed_button, button)
-
+                
         except KeyboardInterrupt:
             pass
-        finally:
-            GPIO.cleanup()
-        
-simon = Simon()
-simon.run()
