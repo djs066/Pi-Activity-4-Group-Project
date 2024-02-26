@@ -24,3 +24,6 @@ Reason: red is the first item in the BUTTONS list.
         Replacing Simon.BUTTONS with self.sequence causes it to print the first x3
         then cause error. Suspect its related to the while True loop but not sure exactly what.
         Possibly the for loop getting nullified, causing it to be inifinte passes.
+
+#2 sounds error
+reason: Github refuses to update sounds folder name, not sure why. change Sounds -> sounds to prevent error with py game.
